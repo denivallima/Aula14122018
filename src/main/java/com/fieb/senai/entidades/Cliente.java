@@ -1,5 +1,7 @@
 package com.fieb.senai.entidades;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -46,6 +48,24 @@ public class Cliente {
     public void setIdade(Integer idade) {
         this.idade = idade;
     }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public Set<String> getTelefone() {
+        return Collections.unmodifiableSet(telefone);
+    }
+
+    public void setTelefone(String... telefone) {
+        this.telefone.addAll(Arrays.asList(telefone));
+    }
+    
+   
 
     @Override
     public int hashCode() {
